@@ -1,0 +1,1770 @@
+﻿i = 0
+leon@robopro.co
+i = 1
+2170 2017/09/29
+i = 2
+279 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Mellicent Ivoshin
+Dynazzy
+37 Carpenter Court
+Sinilian First
+560-390-2703
+mivoshincp@gravatar.com
+
+
+i = 5
+Fee 6
+i = 6
+200,00
+i = 7
+1 200,00
+i = 8
+Services 7
+i = 9
+75,00
+i = 10
+525,00
+i = 11
+1 725,00
+i = 12
+leon@robopro.co
+
+
+i = 0
+leon@robopro.co
+i = 1
+3031 2016/10/27
+i = 2
+609 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Lauritz Gravell
+Yakidoo
+0 Manley Parkway
+Yingwusitang
+123-518-2939
+lgravellnh@imageshack.us
+
+
+i = 5
+Fee 1
+i = 6
+200,00
+i = 7
+200,00
+i = 8
+Services 6
+i = 9
+75,00
+i = 10
+450,00
+i = 11
+650,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+5536 2018/08/17
+i = 2
+97 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Denny Barkaway
+Jamia
+8 Prentice Road
+Xihanling
+354-626-9437
+dbarkawayl7@state.tx.us
+
+
+i = 5
+Fee 2
+i = 6
+200,00
+i = 7
+400,00
+i = 8
+Services 7
+i = 9
+75,00
+i = 10
+525,00
+i = 11
+925,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+2223 2017/10/07
+i = 2
+570 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Deeann Cartwright
+Mydo
+7702 8th Junction
+Manika
+216-360-6973
+dcartwrightl5@va.gov
+
+
+i = 5
+Fee 3
+i = 6
+200,00
+i = 7
+600,00
+i = 8
+Services 1
+i = 9
+75,00
+i = 10
+75,00
+i = 11
+675,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+3441 2016/04/06
+i = 2
+907 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Fenelia Sisland
+Tagopia
+89410 Colorado Circle
+Shazhou
+408-751-0994
+fsislandhw@auda.org.au
+
+
+i = 5
+Fee 8
+i = 6
+200,00
+i = 7
+1 600,00
+i = 8
+Services 3
+i = 9
+75,00
+i = 10
+225,00
+i = 11
+1 825,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+2170 2017/09/29
+i = 2
+279 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Mellicent Ivoshin
+Dynazzy
+37 Carpenter Court
+Sinilian First
+560-390-2703
+mivoshincp@gravatar.com
+
+
+i = 5
+Fee 6
+i = 6
+200,00
+i = 7
+1 200,00
+i = 8
+Services 7
+i = 9
+75,00
+i = 10
+525,00
+i = 11
+1 725,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+3031 2016/10/27
+i = 2
+609 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Lauritz Gravell
+Yakidoo
+0 Manley Parkway
+Yingwusitang
+123-518-2939
+lgravellnh@imageshack.us
+
+
+i = 5
+Fee 1
+i = 6
+200,00
+i = 7
+200,00
+i = 8
+Services 6
+i = 9
+75,00
+i = 10
+450,00
+i = 11
+650,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+5536 2018/08/17
+i = 2
+97 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Denny Barkaway
+Jamia
+8 Prentice Road
+Xihanling
+354-626-9437
+dbarkawayl7@state.tx.us
+
+
+i = 5
+Fee 2
+i = 6
+200,00
+i = 7
+400,00
+i = 8
+Services 7
+i = 9
+75,00
+i = 10
+525,00
+i = 11
+925,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+2223 2017/10/07
+i = 2
+570 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Deeann Cartwright
+Mydo
+7702 8th Junction
+Manika
+216-360-6973
+dcartwrightl5@va.gov
+
+
+i = 5
+Fee 3
+i = 6
+200,00
+i = 7
+600,00
+i = 8
+Services 1
+i = 9
+75,00
+i = 10
+75,00
+i = 11
+675,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+3441 2016/04/06
+i = 2
+907 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Fenelia Sisland
+Tagopia
+89410 Colorado Circle
+Shazhou
+408-751-0994
+fsislandhw@auda.org.au
+
+
+i = 5
+Fee 8
+i = 6
+200,00
+i = 7
+1 600,00
+i = 8
+Services 3
+i = 9
+75,00
+i = 10
+225,00
+i = 11
+1 825,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+2170 2017/09/29
+i = 2
+279 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Mellicent Ivoshin
+Dynazzy
+37 Carpenter Court
+Sinilian First
+560-390-2703
+mivoshincp@gravatar.com
+
+
+i = 5
+Fee 6
+i = 6
+200,00
+i = 7
+1 200,00
+i = 8
+Services 7
+i = 9
+75,00
+i = 10
+525,00
+i = 11
+1 725,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+3031 2016/10/27
+i = 2
+609 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Lauritz Gravell
+Yakidoo
+0 Manley Parkway
+Yingwusitang
+123-518-2939
+lgravellnh@imageshack.us
+
+
+i = 5
+Fee 1
+i = 6
+200,00
+i = 7
+200,00
+i = 8
+Services 6
+i = 9
+75,00
+i = 10
+450,00
+i = 11
+650,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+5536 2018/08/17
+i = 2
+97 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Denny Barkaway
+Jamia
+8 Prentice Road
+Xihanling
+354-626-9437
+dbarkawayl7@state.tx.us
+
+
+i = 5
+Fee 2
+i = 6
+200,00
+i = 7
+400,00
+i = 8
+Services 7
+i = 9
+75,00
+i = 10
+525,00
+i = 11
+925,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+2223 2017/10/07
+i = 2
+570 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Deeann Cartwright
+Mydo
+7702 8th Junction
+Manika
+216-360-6973
+dcartwrightl5@va.gov
+
+
+i = 5
+Fee 3
+i = 6
+200,00
+i = 7
+600,00
+i = 8
+Services 1
+i = 9
+75,00
+i = 10
+75,00
+i = 11
+675,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+3441 2016/04/06
+i = 2
+907 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Fenelia Sisland
+Tagopia
+89410 Colorado Circle
+Shazhou
+408-751-0994
+fsislandhw@auda.org.au
+
+
+i = 5
+Fee 8
+i = 6
+200,00
+i = 7
+1 600,00
+i = 8
+Services 3
+i = 9
+75,00
+i = 10
+225,00
+i = 11
+1 825,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+2170 2017/09/29
+i = 2
+279 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Mellicent Ivoshin
+Dynazzy
+37 Carpenter Court
+Sinilian First
+560-390-2703
+mivoshincp@gravatar.com
+
+
+i = 5
+Fee 6
+i = 6
+200,00
+i = 7
+1 200,00
+i = 8
+Services 7
+i = 9
+75,00
+i = 10
+525,00
+i = 11
+1 725,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+3031 2016/10/27
+i = 2
+609 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Lauritz Gravell
+Yakidoo
+0 Manley Parkway
+Yingwusitang
+123-518-2939
+lgravellnh@imageshack.us
+
+
+i = 5
+Fee 1
+i = 6
+200,00
+i = 7
+200,00
+i = 8
+Services 6
+i = 9
+75,00
+i = 10
+450,00
+i = 11
+650,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+5536 2018/08/17
+i = 2
+97 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Denny Barkaway
+Jamia
+8 Prentice Road
+Xihanling
+354-626-9437
+dbarkawayl7@state.tx.us
+
+
+i = 5
+Fee 2
+i = 6
+200,00
+i = 7
+400,00
+i = 8
+Services 7
+i = 9
+75,00
+i = 10
+525,00
+i = 11
+925,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+2223 2017/10/07
+i = 2
+570 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Deeann Cartwright
+Mydo
+7702 8th Junction
+Manika
+216-360-6973
+dcartwrightl5@va.gov
+
+
+i = 5
+Fee 3
+i = 6
+200,00
+i = 7
+600,00
+i = 8
+Services 1
+i = 9
+75,00
+i = 10
+75,00
+i = 11
+675,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+3441 2016/04/06
+i = 2
+907 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Fenelia Sisland
+Tagopia
+89410 Colorado Circle
+Shazhou
+408-751-0994
+fsislandhw@auda.org.au
+
+
+i = 5
+Fee 8
+i = 6
+200,00
+i = 7
+1 600,00
+i = 8
+Services 3
+i = 9
+75,00
+i = 10
+225,00
+i = 11
+1 825,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+2170 2017/09/29
+i = 2
+279 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Mellicent Ivoshin
+Dynazzy
+37 Carpenter Court
+Sinilian First
+560-390-2703
+mivoshincp@gravatar.com
+
+
+i = 5
+Fee 6
+i = 6
+200,00
+i = 7
+1 200,00
+i = 8
+Services 7
+i = 9
+75,00
+i = 10
+525,00
+i = 11
+1 725,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+3031 2016/10/27
+i = 2
+609 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Lauritz Gravell
+Yakidoo
+0 Manley Parkway
+Yingwusitang
+123-518-2939
+lgravellnh@imageshack.us
+
+
+i = 5
+Fee 1
+i = 6
+200,00
+i = 7
+200,00
+i = 8
+Services 6
+i = 9
+75,00
+i = 10
+450,00
+i = 11
+650,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+5536 2018/08/17
+i = 2
+97 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Denny Barkaway
+Jamia
+8 Prentice Road
+Xihanling
+354-626-9437
+dbarkawayl7@state.tx.us
+
+
+i = 5
+Fee 2
+i = 6
+200,00
+i = 7
+400,00
+i = 8
+Services 7
+i = 9
+75,00
+i = 10
+525,00
+i = 11
+925,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+2223 2017/10/07
+i = 2
+570 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Deeann Cartwright
+Mydo
+7702 8th Junction
+Manika
+216-360-6973
+dcartwrightl5@va.gov
+
+
+i = 5
+Fee 3
+i = 6
+200,00
+i = 7
+600,00
+i = 8
+Services 1
+i = 9
+75,00
+i = 10
+75,00
+i = 11
+675,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+3441 2016/04/06
+i = 2
+907 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Fenelia Sisland
+Tagopia
+89410 Colorado Circle
+Shazhou
+408-751-0994
+fsislandhw@auda.org.au
+
+
+i = 5
+Fee 8
+i = 6
+200,00
+i = 7
+1 600,00
+i = 8
+Services 3
+i = 9
+75,00
+i = 10
+225,00
+i = 11
+1 825,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+2170 2017/09/29
+i = 2
+279 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Mellicent Ivoshin
+Dynazzy
+37 Carpenter Court
+Sinilian First
+560-390-2703
+mivoshincp@gravatar.com
+
+
+i = 5
+Fee 6
+i = 6
+200,00
+i = 7
+1 200,00
+i = 8
+Services 7
+i = 9
+75,00
+i = 10
+525,00
+i = 11
+1 725,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+8380 2018/07/19
+i = 2
+888 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Shanda Trice
+Quire
+091 Mallard Terrace
+Kelodan
+149-556-9368
+stricedw@apple.com
+
+
+i = 5
+Fee 4
+i = 6
+200,00
+i = 7
+800,00
+i = 8
+Services 4
+i = 9
+75,00
+i = 10
+300,00
+i = 11
+1 100,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+7198 2018/01/05
+i = 2
+526 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Marshall Dederick
+Ailane
+6050 Lunder Alley
+Chaka
+794-539-5795
+mdederickc3@uiuc.edu
+
+
+i = 5
+Fee 8
+i = 6
+200,00
+i = 7
+1 600,00
+i = 8
+Services 7
+i = 9
+75,00
+i = 10
+525,00
+i = 11
+2 125,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+5295 2016/09/02
+i = 2
+618 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Willie Rizzo
+Skibox
+8582 Daystar Lane
+Ogōri-shimogō
+552-683-5709
+wrizzoac@prweb.com
+
+
+i = 5
+Fee 9
+i = 6
+200,00
+i = 7
+1 800,00
+i = 8
+Services 10
+i = 9
+75,00
+i = 10
+750,00
+i = 11
+2 550,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+9970 2016/11/10
+i = 2
+524 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Guillemette Younie
+Eamia
+50835 Havey Park
+Langkapcaang Hilir
+374-657-0257
+gyounieqr@domainmarket.com
+
+
+i = 5
+Fee 5
+i = 6
+200,00
+i = 7
+1 000,00
+i = 8
+Services 7
+i = 9
+75,00
+i = 10
+525,00
+i = 11
+1 525,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+4860 2017/12/17
+i = 2
+127 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Sarita Lucken
+Meetz
+178 Everett Junction
+Harstad
+587-578-8627
+slucken2p@4shared.com
+
+
+i = 5
+Fee 1
+i = 6
+200,00
+i = 7
+200,00
+i = 8
+Services 7
+i = 9
+75,00
+i = 10
+525,00
+i = 11
+725,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+6020 2018/09/19
+i = 2
+995 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Jordain Willmont
+Jetwire
+8154 Delladonna Crossing
+Gračec
+189-903-1115
+jwillmont9@scribd.com
+
+
+i = 5
+Fee 8
+i = 6
+200,00
+i = 7
+1 600,00
+i = 8
+Services 8
+i = 9
+75,00
+i = 10
+600,00
+i = 11
+2 200,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+2147 2017/10/13
+i = 2
+246 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Rhianna Adkin
+Photolist
+70435 Lyons Trail
+Bugis
+562-601-5418
+radkinnn@engadget.com
+
+
+i = 5
+Fee 8
+i = 6
+200,00
+i = 7
+1 600,00
+i = 8
+Services 2
+i = 9
+75,00
+i = 10
+150,00
+i = 11
+1 750,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+1122 2018/09/01
+i = 2
+403 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Jeniece Scranney
+Plajo
+70470 Myrtle Point
+Nagrog Wetan
+243-503-8962
+jscranneyj@go.com
+
+
+i = 5
+Fee 9
+i = 6
+200,00
+i = 7
+1 800,00
+i = 8
+Services 5
+i = 9
+75,00
+i = 10
+375,00
+i = 11
+2 175,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+7954 2018/03/29
+i = 2
+901 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Maurizio Autry
+Mydo
+6 Steensland Pass
+Bagumbayan
+805-159-2584
+mautrydk@webmd.com
+
+
+i = 5
+Fee 1
+i = 6
+200,00
+i = 7
+200,00
+i = 8
+Services 7
+i = 9
+75,00
+i = 10
+525,00
+i = 11
+725,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+8308 2016/07/26
+i = 2
+345 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Benedetto Creser
+Zooxo
+404 Warner Parkway
+Huasta
+422-354-6040
+bcreserao@usatoday.com
+
+
+i = 5
+Fee 5
+i = 6
+200,00
+i = 7
+1 000,00
+i = 8
+Services 10
+i = 9
+75,00
+i = 10
+750,00
+i = 11
+1 750,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+4437 2016/08/10
+i = 2
+647 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Tabb Pethybridge
+Skipstorm
+8440 Sage Drive
+Wuqishan
+790-140-9006
+tpethybridgedn@google.it
+
+
+i = 5
+Fee 10
+i = 6
+200,00
+i = 7
+2 000,00
+i = 8
+Services 6
+i = 9
+75,00
+i = 10
+450,00
+i = 11
+2 450,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+6604 2016/10/09
+i = 2
+262 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Ram Farndell
+Gabcube
+8014 1st Plaza
+Rio Claro
+653-682-4764
+rfarndellkk@sciencedaily.com
+
+
+i = 5
+Fee 10
+i = 6
+200,00
+i = 7
+2 000,00
+i = 8
+Services 5
+i = 9
+75,00
+i = 10
+375,00
+i = 11
+2 375,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+6014 2017/12/25
+i = 2
+189 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Mildrid Rigney
+Riffwire
+8 Forest Alley
+Hengshui
+219-194-7716
+mrigneyhz@mac.com
+
+
+i = 5
+Fee 9
+i = 6
+200,00
+i = 7
+1 800,00
+i = 8
+Services 10
+i = 9
+75,00
+i = 10
+750,00
+i = 11
+2 550,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+3152 2017/01/22
+i = 2
+812 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Keri Wreiford
+Blognation
+2966 Londonderry Street
+Samoljica
+950-509-7005
+kwreifordhv@virginia.edu
+
+
+i = 5
+Fee 7
+i = 6
+200,00
+i = 7
+1 400,00
+i = 8
+Services 4
+i = 9
+75,00
+i = 10
+300,00
+i = 11
+1 700,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+6374 2018/03/25
+i = 2
+961 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Orville Gerhardt
+Geba
+77 Stuart Plaza
+Vom
+501-779-5026
+ogerhardte7@nbcnews.com
+
+
+i = 5
+Fee 6
+i = 6
+200,00
+i = 7
+1 200,00
+i = 8
+Services 9
+i = 9
+75,00
+i = 10
+675,00
+i = 11
+1 875,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+9020 2018/10/23
+i = 2
+654 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Hamilton Skouling
+Meeveo
+592 Everett Place
+Avignon
+183-783-1430
+hskoulingga@abc.net.au
+
+
+i = 5
+Fee 6
+i = 6
+200,00
+i = 7
+1 200,00
+i = 8
+Services 6
+i = 9
+75,00
+i = 10
+450,00
+i = 11
+1 650,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+7008 2016/11/22
+i = 2
+666 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Garwin Slorach
+Livetube
+7 Jay Plaza
+Bhamo
+845-997-4920
+gslorachkl@exblog.jp
+
+
+i = 5
+Fee 3
+i = 6
+200,00
+i = 7
+600,00
+i = 8
+Services 4
+i = 9
+75,00
+i = 10
+300,00
+i = 11
+900,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+5352 2018/01/30
+i = 2
+555 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Boony Dumper
+Oozz
+335 Jana Alley
+Valença do Piauí
+482-968-0620
+bdumper6d@wikia.com
+
+
+i = 5
+Fee 2
+i = 6
+200,00
+i = 7
+400,00
+i = 8
+Services 1
+i = 9
+75,00
+i = 10
+75,00
+i = 11
+475,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+5255 2016/10/28
+i = 2
+779 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Dulci Scay
+Oba
+6 Hintze Way
+Huotian
+470-941-7656
+dscayhh@fotki.com
+
+
+i = 5
+Fee 7
+i = 6
+200,00
+i = 7
+1 400,00
+i = 8
+Services 8
+i = 9
+75,00
+i = 10
+600,00
+i = 11
+2 000,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+5402 2016/10/22
+i = 2
+284 Net
+i = 3
+30 Days
+i = 4
+BILL TO
+
+Keri Dancy
+Jabberbean
+5282 Oak Hill
+Hodoš
+958-896-6434
+kdancy81@nydailynews.com
+
+
+i = 5
+Fee 5
+i = 6
+200,00
+i = 7
+1 000,00
+i = 8
+Services 2
+i = 9
+75,00
+i = 10
+150,00
+i = 11
+1 150,00
+i = 12
+leon@robopro.co
+i = 0
+leon@robopro.co
+i = 1
+1443 2016/09/19
+i = 2
+885 Net
+i = 3
+30 Days
+i = 4
+246-580-3439
+i = 5
+hpavicpa@sakura.ne.jp
+0 - leon@robopro.co
+1 - 2170 2017/09/29
+2 - 279 Net
+3 - 30 Days
+4 - BILL TO
+
+Mellicent Ivoshin
+Dynazzy
+37 Carpenter Court
+Sinilian First
+560-390-2703
+mivoshincp@gravatar.com
+
+
+5 - Fee 6
+6 - 200,00
+7 - 1 200,00
+8 - Services 7
+9 - 75,00
+10 - 525,00
+11 - 1 725,00
+12 - leon@robopro.co
+0 - leon@robopro.co
+1 - 2170 2017/09/29
+0 - leon@robopro.co
+1 - 2170 2017/09/29
+2 - 279 Net
+3 - 30 Days
+4 - BILL TO
+
+Mellicent Ivoshin
+Dynazzy
+37 Carpenter Court
+Sinilian First
+560-390-2703
+mivoshincp@gravatar.com
+
+
+5 - Fee 6
+6 - 200,00
+7 - 1 200,00
+8 - Services 7
+9 - 75,00
+10 - 525,00
+11 - 1 725,00
+12 - leon@robopro.co
+0 - leon@robopro.co
+1 - 3031 2016/10/27
+2 - 609 Net
+3 - 30 Days
+4 - BILL TO
+
+Lauritz Gravell
+Yakidoo
+0 Manley Parkway
+Yingwusitang
+123-518-2939
+lgravellnh@imageshack.us
+
+
+5 - Fee 1
+6 - 200,00
+7 - 200,00
+8 - Services 6
+9 - 75,00
+10 - 450,00
+11 - 650,00
+12 - leon@robopro.co
+0 - leon@robopro.co
+1 - 5536 2018/08/17
+2 - 97 Net
+3 - 30 Days
+4 - BILL TO
+
+Denny Barkaway
+Jamia
+8 Prentice Road
+Xihanling
+354-626-9437
+dbarkawayl7@state.tx.us
+
+
+5 - Fee 2
+6 - 200,00
+7 - 400,00
+8 - Services 7
+9 - 75,00
+10 - 525,00
+11 - 925,00
+12 - leon@robopro.co
+0 - leon@robopro.co
+1 - 2223 2017/10/07
+2 - 570 Net
+3 - 30 Days
+4 - BILL TO
+
+Deeann Cartwright
+Mydo
+7702 8th Junction
+Manika
+216-360-6973
+dcartwrightl5@va.gov
+
+
+5 - Fee 3
+6 - 200,00
+7 - 600,00
+8 - Services 1
+9 - 75,00
+10 - 75,00
+11 - 675,00
+12 - leon@robopro.co
+0 - leon@robopro.co
+1 - 3441 2016/04/06
+2 - 907 Net
+3 - 30 Days
+4 - BILL TO
+
+Fenelia Sisland
+Tagopia
+89410 Colorado Circle
+Shazhou
+408-751-0994
+fsislandhw@auda.org.au
+
+
+5 - Fee 8
+6 - 200,00
+7 - 1 600,00
+8 - Services 3
+9 - 75,00
+10 - 225,00
+11 - 1 825,00
+12 - leon@robopro.co

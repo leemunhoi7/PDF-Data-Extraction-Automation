@@ -1,0 +1,15 @@
+"Invoice No = "+Invoice_Date(0)
+" Date = "+Invoice_Date(1)
+"Custormer_Id = "+Custormer_Id(0)
+"Terms = "+Terms(0)
+"Service_Qty = "+Service_Qty(1)
+"Unit_Price = "+strService_Unit_Price
+"Service_Amount = "+strService_Amount
+"Add_Service_Qty = "+Add_Service_Qty(1)
+"Add_Service_Unit_Price = "+strAdd_Service_Unit_Price
+"Add_Service_Amount = "+strAdd_Service_Amount
+"Total_Amount = "+strTotal_Amount
+
+"strBill_To_Client = "+strBill_To_Client
+
+filename+","+Invoice_Date(0).ToString+","+Invoice_Date(1).ToString+","+Custormer_Id(0).ToString+","+Terms(0).ToString+","+Service_Qty(1).ToString+","+strService_Unit_Price+","+strService_Amount+","+Add_Service_Qty(1).ToString+","+strAdd_Service_Unit_Price+","+strAdd_Service_Amount+","+strTotal_Amount+","+strBill_To_Client
