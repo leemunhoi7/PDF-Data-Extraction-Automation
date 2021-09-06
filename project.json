@@ -1,10 +1,37 @@
 {
   "name": "Read PDF file",
-  "description": "Extract data from each PDF files and output to a spreadsheet ",
+  "description": "Extract data from multiple PDF files and output to a spreadsheet
+Main.xaml - 30Aug2021 : Initial Release by Lee Mun Hoi
+The main flowchart include 3 independent programs:
+Extract_PDF_data_via_screen_scraping.xaml : 
+ Launch each file to scrap data in foreground with 2 scraping options:Modern Design and Classic Design
+ The data extraction speed is slow - about 3-4 files per min.
+Extract_PDF_data_via_Taxonomy_Manager.xaml :
+ Use Taxonomy Manager to build data fields and use Document Understanding tools to digitize (via OmniPage OCR), 
+classifying file types and extract data via various build-in extraction scopes in background.
+ 2 types of Extractor Scopes were tried:
+ 1.Form Extractor:     (set IsFormExtractor to True in Manin.xaml)
+     Need Api Key to access EndPoint site to enable the form template editor which is used to mark the data 
+     position via an existing PDF file as template.
+     The data extraction speed is about 40 files per min.
+ 2.RegexBasedExtractor:  (set IsFormExtractor to False in Main.xaml)
+     No need Api key but Developer needs to program specific Regex patterns to match each field.
+     The data extraction speed is about 220 files per min.
+Extract_PDF_data_via_Regex_match.xaml
+ Convert all texts of each PDF file in background and use one Regex match pattern to extract all the required 
+data in one go and apply strings manipulation to fine-tuning each extracted data.
+ 2 Options are available.
+1.Direct Append extracted data to text file in CSV format without data table.(set IsDirecAppendToCSV to True in Main.xaml)
+2.Export extracted data to excel file via data table.(set IsDirecAppendToCSV to False in Main.xaml)                        
+  The data extraction speed achieves 1000 pdf file in 40sec.
+ ",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.DocumentUnderstanding.ML.Activities": "[1.8.0-preview]",
     "UiPath.Excel.Activities": "[2.10.4]",
+    "UiPath.IntelligentOCR.Activities": "[4.17.0-preview]",
     "UiPath.Mail.Activities": "[1.10.4]",
+    "UiPath.OmniPage.Activities": "[1.7.1]",
     "UiPath.PDF.Activities": "[3.4.0]",
     "UiPath.System.Activities": "[21.4.0]",
     "UiPath.UIAutomation.Activities": "[21.4.3]"
@@ -38,7 +65,7 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": false
+    "modernBehavior": true
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [

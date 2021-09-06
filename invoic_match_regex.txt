@@ -1,8 +1,0 @@
-(\w+@\w+\.\w+\.?\w+)|(\d*[/-]\d*[/-]\d+)|(\d+,\d+)|([\d\w]+)
-
-
-(\w+@\w+\.\w+\.?\w+)|((\d+\s)?\d+[/-]\d+[/-]\d+)|((\d+\s)?\d+,\d+)|(\d+\sNet)|(\d+\sDays)|(Fee\s\d+)|(Services\s\d+)
-
-(?=BILL.TO)[-@.\w\s]*\s*(?=DESCRIPTION)
-
-(\w+@\w+\.\w+\.?\w+)|((\d+\s)?\d+[/-]\d+[/-]\d+)|((\d+\s)?\d+,\d+)|(\d+\sNet)|(\d+\sDays)|(Fee\s\d+)|(Services\s\d+)|(?=BILL.TO)[\W\w\s]*\s*(?=DESCRIPTION)

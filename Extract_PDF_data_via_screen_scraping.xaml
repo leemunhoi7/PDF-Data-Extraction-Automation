@@ -1,0 +1,966 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="automatePDFdataScraping" this:automatePDFdataScraping.in_InputFilePath="pdf_files_5" this:automatePDFdataScraping.in_maxfileCount="2" this:automatePDFdataScraping.in_IsClassicMode="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_InputFilePath" Type="InArgument(x:String)" />
+    <x:Property Name="in_maxfileCount" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_IsClassicMode" Type="InArgument(x:Boolean)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1185,9498</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>automatePDFdataScraping_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="64">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="74">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>UiPath.OmniPage.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OmniPage.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="automatePDFdataScraping" sap:VirtualizedContainerService.HintSize="1195,9433" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:String[]" Name="filePDFs" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DT" />
+      <Variable x:TypeArguments="x:String" Name="custID1" />
+      <Variable x:TypeArguments="x:String" Name="invoice1" />
+      <Variable x:TypeArguments="x:String" Name="terms1" />
+      <Variable x:TypeArguments="x:String" Name="date1" />
+      <Variable x:TypeArguments="x:String" Name="name1" />
+      <Variable x:TypeArguments="x:String" Name="email1" />
+      <Variable x:TypeArguments="x:String" Name="total1" />
+      <Variable x:TypeArguments="x:String" Name="coyname1" />
+      <Variable x:TypeArguments="x:String" Name="address1" />
+      <Variable x:TypeArguments="x:String" Name="citi1" />
+      <Variable x:TypeArguments="x:String" Name="phone1" />
+      <Variable x:TypeArguments="x:String" Name="sf_qty" />
+      <Variable x:TypeArguments="x:String" Name="sf_up" />
+      <Variable x:TypeArguments="x:String" Name="asf_qty" />
+      <Variable x:TypeArguments="x:String" Name="asf_up" />
+      <Variable x:TypeArguments="x:String" Name="filename1" />
+      <Variable x:TypeArguments="x:String" Name="sf_amount" />
+      <Variable x:TypeArguments="x:String" Name="asf_amount" />
+      <Variable x:TypeArguments="x:Int32" Name="j" />
+      <Variable x:TypeArguments="x:String" Name="OutputFile" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="1153,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[filePDFs]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[directory.GetFiles(in_InputFilePath)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:BuildDataTable DataTable="[DT]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="1153,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;File_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Invoice_x0023_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;CMR_x0020_Id&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Terms&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SF_x0020_Qty&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SF_x0020_UnitPrice_x0028__x0024__x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SF_x0020_Amt_x0028__x0024__x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ASF_x0020_Qty&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ASF_x0020_UnitPrice_x0028__x0024__x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ASF_x0020_Amt_x0028__x0024__x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Total_x0028__x0024__x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Bill_x0020_To&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Company&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Street_x0020_Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;City&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Phone_x0023_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Email_x0020_Id&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[j]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1153,8210" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[filePDFs]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:String" Name="file" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1117,8076" sap2010:WorkflowViewState.IdRef="Sequence_25">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If sap2010:Annotation.AnnotationText="" Condition="[j&gt;=in_maxfileCount]" sap:VirtualizedContainerService.HintSize="1075,268" sap2010:WorkflowViewState.IdRef="If_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <ui:Break sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Break_3" />
+              </If.Then>
+            </If>
+            <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[file.ToString]" sap:VirtualizedContainerService.HintSize="1075,87" sap2010:WorkflowViewState.IdRef="StartProcess_3" />
+            <Assign sap:VirtualizedContainerService.HintSize="1075,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[filename1]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Path.GetFilename(file.ToString).ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <If sap2010:Annotation.AnnotationText="IsClassicMode = True,  use classic screen scraping mode&#xA;IsClassicMode = False, use modern screen scraping mode" Condition="[in_IsClassicMode]" sap:VirtualizedContainerService.HintSize="1075,6625" sap2010:WorkflowViewState.IdRef="If_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Sequence - Classic Design" sap:VirtualizedContainerService.HintSize="554,6425" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'acrord32.exe Billing'" sap:VirtualizedContainerService.HintSize="512,6333" sap2010:WorkflowViewState.IdRef="WindowScope_4" InformativeScreenshot="a4feeaede233bae1ef1620a89a2dfb77" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)' /&gt;">
+                    <ui:WindowScope.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="478,6187" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,192" sap2010:WorkflowViewState.IdRef="CommentOut_29">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_4" />
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                          </ui:CommentOut>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,286" sap2010:WorkflowViewState.IdRef="CommentOut_30">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,208" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey - to set actual size" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_8" Key="num1" KeyModifiers="Ctrl" SpecialKey="True">
+                                  <ui:SendHotkey.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="2612bf46-96f9-489d-8cf0-017bdfb1977b">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:SendHotkey.Target>
+                                </ui:SendHotkey>
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                          </ui:CommentOut>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_47" Text="[vbCrLf+j.ToString+&quot; Start scapping(Classic) filename = &quot;+filename1]" />
+                          <ui:AnchorBase AnchorPosition="Top" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="436,352" sap2010:WorkflowViewState.IdRef="AnchorBase_17">
+                            <ui:AnchorBase.Action>
+                              <ActivityAction x:TypeArguments="ui:Anchor">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
+                                </ActivityAction.Argument>
+                                <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'text  97'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_41">
+                                  <ui:GetValue.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="57fc5551-5bee-427f-932f-e9ced771e681" InformativeScreenshot="b2e91bbb530a98556c8a51046398c504" Selector="&lt;ctrl role='text' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:GetValue.Target>
+                                  <ui:GetValue.Value>
+                                    <OutArgument x:TypeArguments="x:String">[custID1]</OutArgument>
+                                  </ui:GetValue.Value>
+                                </ui:GetValue>
+                              </ActivityAction>
+                            </ui:AnchorBase.Action>
+                            <ui:AnchorBase.AnchorProvider>
+                              <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'text  97'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_17">
+                                <ui:WaitUiElementAppear.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9df39105-6f79-45cc-b2e9-d3cdf819fb6c" InformativeScreenshot="e42ac81ec6cbba72417f968a26b0c2ed" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='8' role='row' /&gt;&lt;ctrl name='CUSTOMER ID  ' role='text' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:WaitUiElementAppear.Target>
+                              </ui:WaitUiElementAppear>
+                            </ui:AnchorBase.AnchorProvider>
+                          </ui:AnchorBase>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_48" Text="[custID1]" />
+                          <ui:AnchorBase AnchorPosition="Top" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="436,352" sap2010:WorkflowViewState.IdRef="AnchorBase_18">
+                            <ui:AnchorBase.Action>
+                              <ActivityAction x:TypeArguments="ui:Anchor">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
+                                </ActivityAction.Argument>
+                                <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'row'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_42">
+                                  <ui:GetValue.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3213cdd4-52ed-4974-a32f-08414283403d" InformativeScreenshot="80bd498de119cf014529be52a69dfa40" Selector="&lt;ctrl role='text' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:GetValue.Target>
+                                  <ui:GetValue.Value>
+                                    <OutArgument x:TypeArguments="x:String">[invoice1]</OutArgument>
+                                  </ui:GetValue.Value>
+                                </ui:GetValue>
+                              </ActivityAction>
+                            </ui:AnchorBase.Action>
+                            <ui:AnchorBase.AnchorProvider>
+                              <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'text  INVOICE #'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_18">
+                                <ui:WaitUiElementAppear.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="36bc874b-de5a-4c78-a076-b481acdf8e7e" InformativeScreenshot="72df413528e0b1762c697ba76b13306a" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='6' role='row' /&gt;&lt;ctrl name='INVOICE #  ' role='text' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:WaitUiElementAppear.Target>
+                              </ui:WaitUiElementAppear>
+                            </ui:AnchorBase.AnchorProvider>
+                          </ui:AnchorBase>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_49" Text="[invoice1]" />
+                          <ui:AnchorBase AnchorPosition="Top" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="436,352" sap2010:WorkflowViewState.IdRef="AnchorBase_19">
+                            <ui:AnchorBase.Action>
+                              <ActivityAction x:TypeArguments="ui:Anchor">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
+                                </ActivityAction.Argument>
+                                <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'text  Net 30 Days'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_43">
+                                  <ui:GetValue.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="392d424e-b829-4c84-8a71-32c4cd107c0d" InformativeScreenshot="1d4c5b5e879b18efa32b0ae1a592b669" Selector="&lt;ctrl role='text' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:GetValue.Target>
+                                  <ui:GetValue.Value>
+                                    <OutArgument x:TypeArguments="x:String">[terms1]</OutArgument>
+                                  </ui:GetValue.Value>
+                                </ui:GetValue>
+                              </ActivityAction>
+                            </ui:AnchorBase.Action>
+                            <ui:AnchorBase.AnchorProvider>
+                              <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'text  TERMS'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_19">
+                                <ui:WaitUiElementAppear.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="43480de4-2583-422a-8c21-1d0019849315" InformativeScreenshot="3b703df67c7e5f0953a082e82aeeaf14" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='8' role='row' /&gt;&lt;ctrl name='TERMS  ' role='text' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:WaitUiElementAppear.Target>
+                              </ui:WaitUiElementAppear>
+                            </ui:AnchorBase.AnchorProvider>
+                          </ui:AnchorBase>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_50" Text="[terms1]" />
+                          <ui:AnchorBase AnchorPosition="Top" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="436,352" sap2010:WorkflowViewState.IdRef="AnchorBase_20">
+                            <ui:AnchorBase.Action>
+                              <ActivityAction x:TypeArguments="ui:Anchor">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
+                                </ActivityAction.Argument>
+                                <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'text  2017/09/29'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_44">
+                                  <ui:GetValue.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="67cd94d6-19f0-43f4-b18a-ec7d494327a7" InformativeScreenshot="b63e67be830fa899a429f4a0bf6f43cd" Selector="&lt;ctrl role='text' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:GetValue.Target>
+                                  <ui:GetValue.Value>
+                                    <OutArgument x:TypeArguments="x:String">[date1]</OutArgument>
+                                  </ui:GetValue.Value>
+                                </ui:GetValue>
+                              </ActivityAction>
+                            </ui:AnchorBase.Action>
+                            <ui:AnchorBase.AnchorProvider>
+                              <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'text  DATE'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_20">
+                                <ui:WaitUiElementAppear.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fe9c6b44-cc85-4c4e-af23-9f614a5941ce" InformativeScreenshot="bcaf13e3598d64bd53efeb2b8b3661bf" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='6' role='row' /&gt;&lt;ctrl name='DATE  ' role='text' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:WaitUiElementAppear.Target>
+                              </ui:WaitUiElementAppear>
+                            </ui:AnchorBase.AnchorProvider>
+                          </ui:AnchorBase>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_51" Text="[date1]" />
+                          <ui:AnchorBase AnchorPosition="Top" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="436,352" sap2010:WorkflowViewState.IdRef="AnchorBase_21">
+                            <ui:AnchorBase.Action>
+                              <ActivityAction x:TypeArguments="ui:Anchor">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
+                                </ActivityAction.Argument>
+                                <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'text  Mellicent Ivoshin'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_45">
+                                  <ui:GetValue.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a0ed7bdd-0659-49cb-8ba8-af7f55482a37" InformativeScreenshot="b0cb08d207efb6e7a2af5c603bc5b554" Selector="&lt;ctrl role='text' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:GetValue.Target>
+                                  <ui:GetValue.Value>
+                                    <OutArgument x:TypeArguments="x:String">[name1]</OutArgument>
+                                  </ui:GetValue.Value>
+                                </ui:GetValue>
+                              </ActivityAction>
+                            </ui:AnchorBase.Action>
+                            <ui:AnchorBase.AnchorProvider>
+                              <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'text  BILL TO'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_21">
+                                <ui:WaitUiElementAppear.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ef87aca6-f8ea-416a-b834-a58d1826388c" InformativeScreenshot="cb9c1526429b4c07040197492e76cc30" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='10' role='row' /&gt;&lt;ctrl name='BILL TO  ' role='text' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:WaitUiElementAppear.Target>
+                              </ui:WaitUiElementAppear>
+                            </ui:AnchorBase.AnchorProvider>
+                          </ui:AnchorBase>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_52" Text="[name1]" />
+                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'text  Dynazzy'" sap:VirtualizedContainerService.HintSize="436,106" sap2010:WorkflowViewState.IdRef="GetValue_46">
+                            <ui:GetValue.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="34a664e7-8b9a-40e6-9465-3638218071f7" InformativeScreenshot="6998490998d37a4a976829c7d1af9567" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='12' role='row' /&gt;&lt;ctrl name='*' role='text' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:GetValue.Target>
+                            <ui:GetValue.Value>
+                              <OutArgument x:TypeArguments="x:String">[coyname1]</OutArgument>
+                            </ui:GetValue.Value>
+                          </ui:GetValue>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_53" Text="[coyname1]" />
+                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'text  37 Carpenter Court'" sap:VirtualizedContainerService.HintSize="436,106" sap2010:WorkflowViewState.IdRef="GetValue_47">
+                            <ui:GetValue.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1694d589-9642-4d09-8a0b-cd628f264090" InformativeScreenshot="49e47c71bffa37d6504b27b1d8096b01" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='13' role='row' /&gt;&lt;ctrl name='*' role='text' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:GetValue.Target>
+                            <ui:GetValue.Value>
+                              <OutArgument x:TypeArguments="x:String">[address1]</OutArgument>
+                            </ui:GetValue.Value>
+                          </ui:GetValue>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_54" Text="[address1]" />
+                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'text  Sinilian First'" sap:VirtualizedContainerService.HintSize="436,106" sap2010:WorkflowViewState.IdRef="GetValue_48">
+                            <ui:GetValue.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="21687e79-135c-4729-b7d0-4935f5cf71a2" InformativeScreenshot="ddebf5fd736e36bc5cc124d6660f3ca0" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='14' role='row' /&gt;&lt;ctrl name='*' role='text' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:GetValue.Target>
+                            <ui:GetValue.Value>
+                              <OutArgument x:TypeArguments="x:String">[citi1]</OutArgument>
+                            </ui:GetValue.Value>
+                          </ui:GetValue>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_55" Text="[citi1]" />
+                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'text  560-390-2703'" sap:VirtualizedContainerService.HintSize="436,106" sap2010:WorkflowViewState.IdRef="GetValue_49">
+                            <ui:GetValue.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6985d5ea-6e7a-4d0f-803b-f8fe93219304" InformativeScreenshot="d2ef6aa09b9749f3aed13d1d5eef3415" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='15' role='row' /&gt;&lt;ctrl name='*-*-*  ' role='text' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:GetValue.Target>
+                            <ui:GetValue.Value>
+                              <OutArgument x:TypeArguments="x:String">[phone1]</OutArgument>
+                            </ui:GetValue.Value>
+                          </ui:GetValue>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_56" Text="[phone1]" />
+                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'text  mivoshincp@gravat...'" sap:VirtualizedContainerService.HintSize="436,106" sap2010:WorkflowViewState.IdRef="GetValue_50">
+                            <ui:GetValue.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5aa4fcf0-0d67-4782-8c73-6f0e4e32067f" InformativeScreenshot="e618314c64302398244213a9f58f42be" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' omit:title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' omit:title='AVPageView' /&gt;&lt;ctrl idx='16' role='row' /&gt;&lt;ctrl name='*@*' role='text' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:GetValue.Target>
+                            <ui:GetValue.Value>
+                              <OutArgument x:TypeArguments="x:String">[email1]</OutArgument>
+                            </ui:GetValue.Value>
+                          </ui:GetValue>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_57" Text="[email1]" />
+                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'text  6'" sap:VirtualizedContainerService.HintSize="436,106" sap2010:WorkflowViewState.IdRef="GetValue_51">
+                            <ui:GetValue.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="803cad3c-a676-415a-a2ae-aba56766bb51" InformativeScreenshot="d6c2d98a9263c9e2815c3cdffd898584" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='21' role='row' /&gt;&lt;ctrl name='*' role='text' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:GetValue.Target>
+                            <ui:GetValue.Value>
+                              <OutArgument x:TypeArguments="x:String">[sf_qty]</OutArgument>
+                            </ui:GetValue.Value>
+                          </ui:GetValue>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_58" Text="[sf_qty]" />
+                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'text  200,00'" sap:VirtualizedContainerService.HintSize="436,106" sap2010:WorkflowViewState.IdRef="GetValue_52">
+                            <ui:GetValue.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7c8617c9-9d38-4b2b-a9de-b63b8cc1bf8d" InformativeScreenshot="3d05b8c422909881874babef079606f2" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='21' role='row' /&gt;&lt;ctrl name='*,*' role='text' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:GetValue.Target>
+                            <ui:GetValue.Value>
+                              <OutArgument x:TypeArguments="x:String">[sf_up]</OutArgument>
+                            </ui:GetValue.Value>
+                          </ui:GetValue>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_59" Text="[sf_up]" />
+                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'text  7'" sap:VirtualizedContainerService.HintSize="436,106" sap2010:WorkflowViewState.IdRef="GetValue_53">
+                            <ui:GetValue.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d3329cb7-94e1-4057-8880-e14d5a42535f" InformativeScreenshot="50a56e4592a3a35a465f30a5fbdfd413" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='22' role='row' /&gt;&lt;ctrl name='*' role='text' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:GetValue.Target>
+                            <ui:GetValue.Value>
+                              <OutArgument x:TypeArguments="x:String">[asf_qty]</OutArgument>
+                            </ui:GetValue.Value>
+                          </ui:GetValue>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_60" Text="[asf_qty]" />
+                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'text  75,00'" sap:VirtualizedContainerService.HintSize="436,106" sap2010:WorkflowViewState.IdRef="GetValue_54">
+                            <ui:GetValue.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1db680a3-1f81-4505-871f-5bfffc4e5785" InformativeScreenshot="fe9ae2a883ab6e99729481d9be1b18fa" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='22' role='row' /&gt;&lt;ctrl name='*,*' role='text' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:GetValue.Target>
+                            <ui:GetValue.Value>
+                              <OutArgument x:TypeArguments="x:String">[asf_up]</OutArgument>
+                            </ui:GetValue.Value>
+                          </ui:GetValue>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_61" Text="[asf_up]" />
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,286" sap2010:WorkflowViewState.IdRef="CommentOut_31">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,208" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey - Page Down" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_9" Key="pgdn" KeyModifiers="None" SpecialKey="True">
+                                  <ui:SendHotkey.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="e498a470-e3a7-485d-aa99-0418021a25e7">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:SendHotkey.Target>
+                                </ui:SendHotkey>
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                          </ui:CommentOut>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,276" sap2010:WorkflowViewState.IdRef="CommentOut_32">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'row'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_55">
+                                  <ui:GetValue.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e969a827-906e-4436-a67a-65100dae5d1c" InformativeScreenshot="2d706743dae574bad9b413e282fc966a" Selector="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='39' role='row' /&gt;&lt;ctrl name='TOTAL  ' role='text' /&gt;&lt;nav up='2' /&gt;&lt;ctrl name='*,*   ' role='text' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:GetValue.Target>
+                                  <ui:GetValue.Value>
+                                    <OutArgument x:TypeArguments="x:String">[total1]</OutArgument>
+                                  </ui:GetValue.Value>
+                                </ui:GetValue>
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                          </ui:CommentOut>
+                          <ui:CloseApplication DisplayName="Close Application 'acrord32.exe Billing'" sap:VirtualizedContainerService.HintSize="436,106" sap2010:WorkflowViewState.IdRef="CloseApplication_11">
+                            <ui:CloseApplication.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="53eb4740-9dd9-4fa8-b619-674e2490ecc4" InformativeScreenshot="8f355e625947874203e06bfc52f801b2" Selector="&lt;wnd app='acrord32.exe' omit:cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)' /&gt;" TimeoutMS="3000">
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:CloseApplication.Target>
+                          </ui:CloseApplication>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:WindowScope.Body>
+                  </ui:WindowScope>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Sequence - Modern Design" sap:VirtualizedContainerService.HintSize="476,4834" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)" sap:VirtualizedContainerService.HintSize="434,4742" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Always" Version="V1">
+                    <uix:NApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,4453" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[vbCrLf+j.ToString+&quot; Start scapping(Modern) filename = &quot;+filename1]" />
+                          <uix:NGetText DisplayName="Get Text 'INVOICE #'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_15" Timeout="2">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="446, 312, 23, 10" ElementType="Text" FriendlyName="'3441'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='7' role='row' /&gt;&lt;ctrl name='3441  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='text' automationid='' /&gt;" InformativeScreenshot="bba60cd42f986fb9a016eecc05c2ac3c.png" ScopeSelectorArgument="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)' /&gt;" SearchSteps="FuzzySelector">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="434, 294, 47, 9" ElementType="Text" FriendlyName="'INVOICE #'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='6' role='row' /&gt;&lt;ctrl name='INVOICE #  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='INVOICE #  ' role='text' automationid='' check:text='INVOICE #' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADMAAAANCAYAAAAE0Vb3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHPSURBVEhL7ZQ7S8RAFIXnV6RMabXVNmlS2Nql2cJKsAhprQa2sQuIjSBprJbBwiamElkCIiIpViQERDLkxxzvvHazPrI2wrJYHCaZx5n73Zk7rOs67Ip2FKbKEDEfUfaAKjsEYyPEYkFjDQoegPkcxYtA7DF4sUCt19kxL4GoJWR1g2m0R2sZaQ/R9AaV7Hs/0Zp3VPkpIvLR84IEWVlTf2v3tf1WPi/QuhiV5BxpOEY8uzatjtGMDcCojaYomnoF0y4g4hFYmKJUQWpjz8A1OXjgI0hmGkBWMyTqn+doejCyTBGyEIl4hpTPEElo/RzMIbKqXQX/WbVK6AFScU6e63OHYSi7k+wO+RJGohYJPEZm5ZsNzHy3BYdvv43nG8r0wKx7ct6l6XPJcHtrbYLZfHI/w/hH4Cf7dIUmiI/HFobm6cz05v2Y1V7f7YX1vjenHGWo3L5LfRdsAF40X+dEFyh0u+4zAMORP2aYuLvtYDpz1bz4HJfxGGE6h6T1W34yKngb0BqMu2rKrBe8rhmqn+gM80Y9Br+ome6VTopOX9cmPQyDMKSB4lfaAEP9NsgVDElfNYL5lOE/f81c8edX1H6FXsHsgP5htlU7BNPhAzC45J4ROQ2LAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                            <uix:NGetText.Text>
+                              <OutArgument x:TypeArguments="x:String">[invoice1]</OutArgument>
+                            </uix:NGetText.Text>
+                          </uix:NGetText>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_17" Text="[invoice1]" />
+                          <uix:NGetText DisplayName="Get Text 'CUSTOMER ID'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_16" Timeout="2">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="449, 349, 17, 10" ElementType="Text" FriendlyName="'907'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='9' role='row' /&gt;&lt;ctrl name='907  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='text' automationid='' /&gt;" InformativeScreenshot="bed3e547876dabfc6cd5e1c65632df93.png" ScopeSelectorArgument="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)' /&gt;" SearchSteps="FuzzySelector">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="425, 331, 66, 9" ElementType="Text" FriendlyName="'CUSTOMER ID'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='8' role='row' /&gt;&lt;ctrl name='CUSTOMER ID  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='CUSTOMER ID  ' role='text' automationid='' check:text='CUSTOMER ID' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEYAAAANCAYAAAAUsRgrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJySURBVEhL7VU9a9xAENWv2HLLq9yrUeHWRWAbFyaFIYVQ5coguMYYjMA/YEkXDjV2c6gy4RCYYMwWCYcQmEPifszLfklaSafLYUin4oE0OzM78+Zjvf1+jxljzMRMoCOmFlgvGYjnwfMI/JAjL2vsBQfzfMRZqfWqLAZt/3cQ6zsw0rcxOkrm4gpcVKjFM5ZsYWULsOUzRK1ieANnVMoa3x/IkwutR+MMVXvu+lS6Wwh+NZAHiNJ31E1uCjoPCsZfR/qE3WEtdp2uhCXGBuHfIJUKtVgh8imCZCO/jxBTb5AEBCRMsc0TBN4ZwvR369zoGkK0rFwjln79aKXJaO7x4zXKNnFi7nWI6BHDOIT1b1CZRGmMrFL/W2TxufNvMSSmOS9fkMhCqRwKx68hRidoiXAONU4gxiMMMc9s5TsMiTH/F0jyD6tjC6KDdDoiSJBvU4S6E/8zMY09iZAWckKsviGmyhBTZfTWOWpwjBg1SukNfNuSHrlEsila2z4xNgC3g3qyV504/Rbimkb4sboFDa4RfpGyqVHSyTU+HLkf4jETx0fJIW5YQIUTO6YbkXHV1Uhk+J6EmiC3JYcXjm3HHUNvH3AfLOD7Z9LXPR6U7NSO2f0Cv5T7y66ETkfiUx0z2DHtLlCzX6iWlotV74Ed3vlXEOuk1nvFnmm948QYv3InsUds5JI+tGNo/ISfeumqYmRWdvoomZj6cWhMEVMbMg/vGIWpV6n38igECPlGJqLsCuQ86kZpUKlDLfqvV4lKkv6kkYxDdVY+Jqa5S0ONtH2V2g6wO8Y712fNvSNiHD9HXqUZQ8zETGAmZgIzMQexx19+htNC7YuCOQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                            <uix:NGetText.Text>
+                              <OutArgument x:TypeArguments="x:String">[custID1]</OutArgument>
+                            </uix:NGetText.Text>
+                          </uix:NGetText>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_18" Text="[custID1]" />
+                          <uix:NGetText DisplayName="Get Text 'DATE'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_17" Timeout="2">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="564, 313, 52, 10" ElementType="Text" FriendlyName="'2016/04/06'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='7' role='row' /&gt;&lt;ctrl name='2016/04/06  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='text' automationid='' /&gt;" InformativeScreenshot="caed613becbfc843e8a945174c46cf5d.png" ScopeSelectorArgument="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)' /&gt;" SearchSteps="FuzzySelector">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="578, 295, 25, 8" ElementType="Text" FriendlyName="'DATE'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='6' role='row' /&gt;&lt;ctrl name='DATE  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='DATE  ' role='text' automationid='' check:text='DATE' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAMCAYAAACeGbYxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEESURBVDhP7ZI9CsJAEIXnFFumtEplkyYXsNvGwgsEbxAQSwl4gL3AVnapRbAQCZImpNslh3kmZpbEGEHwp7J4xc4M8828HaqqCr8WQ09Q0gMRsSaQqx0y6wpz6Mhvc2GCQxM3KWLP1Tt5kOqITC0GcYIXpzBj0DZhUe63kMJHpPMWWmhEQmAaTCFoAZUZHsbBG9iJY4ahg7qeRqDdW0QaRT1EoZc1bIaNWiOk3jCNPgctkcYBSCpkztrGVrNHEgoehps8hfbtDRCnJedf2fRmbb9BLbGELmzb5FOb2rPC/PanF7a2s9QeknuL34V227jrZWsfNqPO4pfsHb3e3+oP/aIqXAH2Tx40jBOe8QAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                            <uix:NGetText.Text>
+                              <OutArgument x:TypeArguments="x:String">[date1]</OutArgument>
+                            </uix:NGetText.Text>
+                          </uix:NGetText>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_19" Text="[date1]" />
+                          <uix:NGetText DisplayName="Get Text 'TERMS'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_18" Timeout="2">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="562, 350, 57, 10" ElementType="Text" FriendlyName="'Net 30 Days'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='9' role='row' /&gt;&lt;ctrl name='Net 30 Days  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='text' automationid='' /&gt;" InformativeScreenshot="c5ea3977ec0d0e42da9a9e4fbab00695.png" ScopeSelectorArgument="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)' /&gt;" SearchSteps="FuzzySelector">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="574, 332, 33, 9" ElementType="Text" FriendlyName="'TERMS'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='8' role='row' /&gt;&lt;ctrl name='TERMS  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='TERMS  ' role='text' automationid='' check:text='TERMS' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACUAAAANCAYAAAAuYadYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGJSURBVEhL7ZO9asMwFIX1FB49ZsquxUPWDAUvHTIFOghPnQKGbIFg6AOIbiVoaZeioZQQDKWUYgrFBEMJNnqYU1mWE8VdQn/AQ4cz6Ei699O9V0Qphb6pv1CljOETAnKkCXj2BB76HZ8iljkyPun4ASLxikq92Dv1uUIn+UCajM0ZP5Yodb4qu8M8HDT3aASebr9CtWrgapjSejZByJE555QqGyg/hizrdQ4Zj+y6hfIQJBsHsoWykF4Eka+RBB48JrB14v8hlK5CkCDNBZjXVPMIigwQxhwy2zlxG50GVSdoZRJbKNenDFcy21fGv2CY+hFuVjP4wRTsTHv79q0QUc/e1XDJIwqH4+eV2j2Dn+v5oJcQ5tUWarbEIhiA0qFuzwLL2rNQJkaVQV4vwWq4upXbah//V9pXpQkC/epmNixUfIu1adMQTEjraahqY+aI0Dlk8QbBht+Ectvk/r7uTJGR3nuwAPd4FxE8MkaSpgcoVaFIeVMhE6/9tQeOI6i+6B/qVPUQSuETAGitlLjX95sAAAAASUVORK5CYII=" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                            <uix:NGetText.Text>
+                              <OutArgument x:TypeArguments="x:String">[terms1]</OutArgument>
+                            </uix:NGetText.Text>
+                          </uix:NGetText>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_20" Text="[terms1]" />
+                          <uix:NGetText DisplayName="Get Text 'BILL TO'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_19" Timeout="2">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="75, 430, 71, 10" ElementType="Text" FriendlyName="'Fenelia Sisland'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='11' role='row' /&gt;&lt;ctrl name='Fenelia Sisland  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='text' automationid='' /&gt;" InformativeScreenshot="1075c89822124179f1f9da24fc4c414d.png" ScopeSelectorArgument="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)' /&gt;" SearchSteps="FuzzySelector">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="85, 412, 37, 9" ElementType="Text" FriendlyName="'BILL TO'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='10' role='row' /&gt;&lt;ctrl name='BILL TO  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='BILL TO  ' role='text' automationid='' check:text='BILL TO' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACkAAAANCAYAAAA0XUfWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEgSURBVEhL7ZOxasMwFEX1FRo1duruxUM/QUuGkD146irI0s1/oB/QHjR1CIEMwWgrxlCMhD7mVq4t10mckJK2ONDhDu+hezl+75l47zF13RmkkeCEgPR6AM9fUXkLI+ehnkOaHSRnIFzCDEJaLwOX+6/eQFYLsIPsRk2ehXcG6xUH7fqUv2Bt6gP/EWQCoatQO5QqC8Ym6P1myKgWtoP77L1BiyeQ5BmqAXMFVJaGegVdud53BrJGIRegNIMq69+DtBqCUaT5Bq5747Y50p6j7V1Ydxj9TKJwt6876gRyzDfSOzPJ+EWPWCoztUn+MWS8STpDvimvvcnhuimSpcS2GrnJ4TsmoPfHXgImNGzM7nQKGfStv3vC+of8Kd0BpMcHHv6FBW6vyzgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                            <uix:NGetText.Text>
+                              <OutArgument x:TypeArguments="x:String">[name1]</OutArgument>
+                            </uix:NGetText.Text>
+                          </uix:NGetText>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_21" Text="[name1]" />
+                          <uix:NGetText DisplayName="Get Text 'BILL TO'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_20" Timeout="2">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="75, 444, 37, 10" ElementType="Text" FriendlyName="'Tagopia'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='12' role='row' /&gt;&lt;ctrl name='Tagopia  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='text' automationid='' /&gt;" InformativeScreenshot="041721efedb1a9e23d3ff67b1749d5a5.png" ScopeSelectorArgument="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)' /&gt;" SearchSteps="FuzzySelector">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="85, 412, 37, 9" ElementType="Text" FriendlyName="'BILL TO'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='10' role='row' /&gt;&lt;ctrl name='BILL TO  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='BILL TO  ' role='text' automationid='' check:text='BILL TO' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACkAAAANCAYAAAA0XUfWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEgSURBVEhL7ZOxasMwFEX1FRo1duruxUM/QUuGkD146irI0s1/oB/QHjR1CIEMwWgrxlCMhD7mVq4t10mckJK2ONDhDu+hezl+75l47zF13RmkkeCEgPR6AM9fUXkLI+ehnkOaHSRnIFzCDEJaLwOX+6/eQFYLsIPsRk2ehXcG6xUH7fqUv2Bt6gP/EWQCoatQO5QqC8Ym6P1myKgWtoP77L1BiyeQ5BmqAXMFVJaGegVdud53BrJGIRegNIMq69+DtBqCUaT5Bq5747Y50p6j7V1Ydxj9TKJwt6876gRyzDfSOzPJ+EWPWCoztUn+MWS8STpDvimvvcnhuimSpcS2GrnJ4TsmoPfHXgImNGzM7nQKGfStv3vC+of8Kd0BpMcHHv6FBW6vyzgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                            <uix:NGetText.Text>
+                              <OutArgument x:TypeArguments="x:String">[coyname1]</OutArgument>
+                            </uix:NGetText.Text>
+                          </uix:NGetText>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_22" Text="[coyname1]" />
+                          <uix:NGetText DisplayName="Get Text 'BILL TO'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_21" Timeout="2">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="75, 459, 89, 9" ElementType="Text" FriendlyName="'37 Carpenter Court'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='13' role='row' /&gt;&lt;ctrl name='*' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='text' automationid='' /&gt;" ImageBase64="" InformativeScreenshot="8a0d0185436add01b7fe9277d1141cf0.png" ScopeSelectorArgument="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)' /&gt;" SearchSteps="Selector">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="85, 412, 37, 9" ElementType="Text" FriendlyName="'BILL TO'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='10' role='row' /&gt;&lt;ctrl name='BILL TO  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='BILL TO  ' role='text' automationid='' check:text='BILL TO' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACkAAAANCAYAAAA0XUfWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEgSURBVEhL7ZOxasMwFEX1FRo1duruxUM/QUuGkD146irI0s1/oB/QHjR1CIEMwWgrxlCMhD7mVq4t10mckJK2ONDhDu+hezl+75l47zF13RmkkeCEgPR6AM9fUXkLI+ehnkOaHSRnIFzCDEJaLwOX+6/eQFYLsIPsRk2ehXcG6xUH7fqUv2Bt6gP/EWQCoatQO5QqC8Ym6P1myKgWtoP77L1BiyeQ5BmqAXMFVJaGegVdud53BrJGIRegNIMq69+DtBqCUaT5Bq5747Y50p6j7V1Ydxj9TKJwt6876gRyzDfSOzPJ+EWPWCoztUn+MWS8STpDvimvvcnhuimSpcS2GrnJ4TsmoPfHXgImNGzM7nQKGfStv3vC+of8Kd0BpMcHHv6FBW6vyzgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                            <uix:NGetText.Text>
+                              <OutArgument x:TypeArguments="x:String">[address1]</OutArgument>
+                            </uix:NGetText.Text>
+                          </uix:NGetText>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_23" Text="[address1]" />
+                          <uix:NGetText DisplayName="Get Text 'BILL TO'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_22" Timeout="2">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="75, 473, 57, 10" ElementType="Text" FriendlyName="'Sinilian First'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='14' role='row' /&gt;&lt;ctrl name='*' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='text' automationid='' /&gt;" ImageBase64="" InformativeScreenshot="a7a8b4f29d58f0b0bfbc89fd6a2396b9.png" ScopeSelectorArgument="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)' /&gt;" SearchSteps="Selector">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="85, 412, 37, 9" ElementType="Text" FriendlyName="'BILL TO'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='10' role='row' /&gt;&lt;ctrl name='BILL TO  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='BILL TO  ' role='text' automationid='' check:text='BILL TO' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACkAAAANCAYAAAA0XUfWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEgSURBVEhL7ZOxasMwFEX1FRo1duruxUM/QUuGkD146irI0s1/oB/QHjR1CIEMwWgrxlCMhD7mVq4t10mckJK2ONDhDu+hezl+75l47zF13RmkkeCEgPR6AM9fUXkLI+ehnkOaHSRnIFzCDEJaLwOX+6/eQFYLsIPsRk2ehXcG6xUH7fqUv2Bt6gP/EWQCoatQO5QqC8Ym6P1myKgWtoP77L1BiyeQ5BmqAXMFVJaGegVdud53BrJGIRegNIMq69+DtBqCUaT5Bq5747Y50p6j7V1Ydxj9TKJwt6876gRyzDfSOzPJ+EWPWCoztUn+MWS8STpDvimvvcnhuimSpcS2GrnJ4TsmoPfHXgImNGzM7nQKGfStv3vC+of8Kd0BpMcHHv6FBW6vyzgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                            <uix:NGetText.Text>
+                              <OutArgument x:TypeArguments="x:String">[citi1]</OutArgument>
+                            </uix:NGetText.Text>
+                          </uix:NGetText>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_24" Text="[citi1]" />
+                          <uix:NGetText DisplayName="Get Text 'BILL TO'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_23" Timeout="2">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="75, 487, 65, 10" ElementType="Text" FriendlyName="'123-518-2939'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='15' role='row' /&gt;&lt;ctrl name='*' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='text' automationid='' /&gt;" ImageBase64="" InformativeScreenshot="d7d064ccfb29a37494c6a00f0a28f303.png" ScopeSelectorArgument="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)' /&gt;" SearchSteps="Selector">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="85, 412, 37, 9" ElementType="Text" FriendlyName="'BILL TO'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='10' role='row' /&gt;&lt;ctrl name='BILL TO  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='BILL TO  ' role='text' automationid='' check:text='BILL TO' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACkAAAANCAYAAAA0XUfWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEgSURBVEhL7ZOxasMwFEX1FRo1duruxUM/QUuGkD146irI0s1/oB/QHjR1CIEMwWgrxlCMhD7mVq4t10mckJK2ONDhDu+hezl+75l47zF13RmkkeCEgPR6AM9fUXkLI+ehnkOaHSRnIFzCDEJaLwOX+6/eQFYLsIPsRk2ehXcG6xUH7fqUv2Bt6gP/EWQCoatQO5QqC8Ym6P1myKgWtoP77L1BiyeQ5BmqAXMFVJaGegVdud53BrJGIRegNIMq69+DtBqCUaT5Bq5747Y50p6j7V1Ydxj9TKJwt6876gRyzDfSOzPJ+EWPWCoztUn+MWS8STpDvimvvcnhuimSpcS2GrnJ4TsmoPfHXgImNGzM7nQKGfStv3vC+of8Kd0BpMcHHv6FBW6vyzgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                            <uix:NGetText.Text>
+                              <OutArgument x:TypeArguments="x:String">[phone1]</OutArgument>
+                            </uix:NGetText.Text>
+                          </uix:NGetText>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_25" Text="[phone1]" />
+                          <uix:NGetText DisplayName="Get Text 'BILL TO'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_24" Timeout="2">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="117, 490, 116, 9" ElementType="Text" FriendlyName="'mivoshincp@gravatar.com'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='16' role='row' /&gt;&lt;ctrl name='*' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='text' automationid='' /&gt;" ImageBase64="" InformativeScreenshot="006ba657df3695f8f4968ecf424678b2.png" ScopeSelectorArgument="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)' /&gt;" SearchSteps="Selector">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="126, 407, 35, 8" ElementType="Text" FriendlyName="'BILL TO'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='10' role='row' /&gt;&lt;ctrl name='BILL TO  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='BILL TO  ' role='text' automationid='' check:text='BILL TO' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADIAAAAPCAYAAACm25zCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFUSURBVEhL7ZWxasMwEIb1FHqETNm9aOiazUtewWTqGvADCPIAXUPR1CV46mC0Fg+FIgwhIPwwfyX7qGXVcaY6ScnwLz7pv/t8vjNrmgb/QQRyhJYrMMaG4inyQwXrz9gSUnAwIaGthVEbcLZEpj5/mTZGIeMMPFMwcSyQ1RIizknq7xro1xyp8+tiAplU0LUdeEUgK0h9pOAXiu2Tg9lAGXfpD0B6jeX3MijlGjx8ofU7ZLoAT3coA5gJkKjYa4C0PhxClh0EyX68YM2HuS93JMlRePLZQSZyUC2h//SMsAXS7b77HmcHOdMlr0Et3bOJjpxQqWckjFp7Xx2J6MOCZgdxan1GZqTddsPck8NeF7nrCF24BsjI1rLVG/LLWyueEbezdwdU/jscBYnPU/EEEsd+Vjkl73UOxMv9R5RElrjcrU8wt8E5Arl/PUBuTQ+Q21KDb0CoJqElTdIcAAAAAElFTkSuQmCC" SearchSteps="Selector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                            <uix:NGetText.Text>
+                              <OutArgument x:TypeArguments="x:String">[email1]</OutArgument>
+                            </uix:NGetText.Text>
+                          </uix:NGetText>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_26" Text="[email1]" />
+                          <uix:NGetText DisplayName="Get Text 'QTY (hours)'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_25" Timeout="2">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="433, 549, 6, 9" ElementType="Text" FriendlyName="'1'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='21' role='row' /&gt;&lt;ctrl name='1  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='text' automationid='' /&gt;" InformativeScreenshot="e50ffc1b45230c56508c69a2828e68da.png" ScopeSelectorArgument="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)' /&gt;" SearchSteps="FuzzySelector">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="411, 533, 50, 8" ElementType="Text" FriendlyName="'QTY (hours)'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='20' role='row' /&gt;&lt;ctrl name='QTY (hours)  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='QTY (hours)  ' role='text' automationid='' check:text='QTY (hours)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADYAAAAMCAYAAAAppE4WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJCSURBVEhL3VU7a9xAEN7/ENhSpStXabZR4SaFC4OaK4yLQCBCRQikElwT0gjSmYTtjarAIVSFcAhCOA4RDIcQGEdCP+bL7EPP0xkcfARcfKCdnZ2Zb15iTdPgOaInVudIlh44Y2AE7n1Ekt+jSkM4VjbCCw7mRshq9XaNyOXgC4mtOmubNcp0CeF+QvzlEswJkVbt3ROjiOHzM4TprpNZYjuk4RmYCCCzggLdIg5cOi+RlrVWNAQvIfOKzjZodoKFzLCRV5SQseGmuUXsn8IJV3R/ZGLWF/djFFZmiFUpQofDjdao7UWdRXCZoGBLfR4TUzptMi7gCQciTFDatxo6i6fw4xy5ItZV+wRe9J10C2QyoORY2fIb8royujoJ/fdqNega8QbhW0q6PXPvM9blHxRxAM4DxIUpxICYA09u+sByCY/1sn1iRH4rseDkgF9Bbu/7t52+SszOEjtHlO2QRec62OSHSpypsrEzSMIsMdUdv1DruDhEcEOJmPNnCrFfMZVp9x2+Rq+pvZSz28HDMbGm2UB6DpgnkXcyg17/bibYD5DXiqy1p/2zSdtOibVBDyvd7wJTiCmxrq3eI97+NPOlHg5K+2/EBhWbBPtgxbTf33pu9onN+Sjtt+qKO31niREmW1Hj4PJojR8mtjdjE2JpNTdj1N75DQJBG5fGQIgZYuUa0m9njFrSl8gOztgc9Ga86Frx8VCb6uVoIR0PJXWcmNmKR0H7H7P/ulmdJ0KZIBSvdFu3siMS+794psQa/AX5qq9PydemjAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                            <uix:NGetText.Text>
+                              <OutArgument x:TypeArguments="x:String">[sf_qty]</OutArgument>
+                            </uix:NGetText.Text>
+                          </uix:NGetText>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_27" Text="[sf_qty]" />
+                          <uix:NGetText DisplayName="Get Text 'UNIT PRICE ($)'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_26" Timeout="2">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="474, 549, 65, 9" ElementType="Text" FriendlyName="'200,00'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='21' role='row' /&gt;&lt;ctrl name='200,00   ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='text' automationid='' /&gt;" InformativeScreenshot="9f0daa4a58e25ea8fce9c776cb5d35ef.png" ScopeSelectorArgument="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)' /&gt;" SearchSteps="FuzzySelector">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="476, 533, 63, 8" ElementType="Text" FriendlyName="'UNIT PRICE ($)'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='20' role='row' /&gt;&lt;ctrl name='UNIT PRICE ($)  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='UNIT PRICE ($)  ' role='text' automationid='' check:text='UNIT PRICE ($)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEMAAAAMCAYAAAA5xADKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJVSURBVEhL7Za/a9tAFMf1V9x4oydPXm7xkKVDNi0eMhUyCE+BDEXgpXTR0sUUbg+aAsVoMsWYQjHmBkMRKsGV0B/z7bvTnXxylGJM0iHN8Ia7e/d+fO69JwV1XeO/kDJDPIyRlT1nViyMDWTIweMMpV7rizyg9Vds5BWCYIgo3ZFegSwWCDgZ3UiEAUc4nxvdIPCF9uXGOmlsH84YxPQOqjreJxE3SNUvKOPzClKVqNQ9ZuHA6owRyRWKurQ63l2SNn4jPynWdxgnK/xWd5gK1uixCZLVd6TRCCJekC2nfzIMMiJmyIr8MQyXtLnjQ3Di265QZDOIQCDOvnV9FgvEFPDBJ8HYLpGMuYW3h0pv6O4lknXRAdb1ZyVPETHtRzUxjwTEwFVGhTydgrEp0rxq75wOIxhgIpdY/EMYX9JPGJvkH45susp4CoafrH1AnYOO27WJgeUqvtk7DQZ/j/j2wpRYdD06C0YDtIEazu572oTaJ/qMzGuTubwF7024r0004MKee+1MyXdazbRJ7uVocybpwGBRilyvjSKjfltia2DEWPyQmDDr+OzK6N/fb7VtN0sOr35+ZVgYoYRyezq+Ac2JEbN5Po7LwtjRQBnauVChMsHpElKNU0P4Aevk8kVglLWz7fnUiXZmhmuxC6qA3WkwTNw2Nz0zuAejffAVKnvPwjgqJVOyEuuChlYLg/RsXz8/DFo72+IDZDJpEz3va9IdkJX3NWHhRyzU/m8z4xWKSdZrMf1Y3n9GmcXg/V+T1yiH/wzXBsdnT/xnvImWNxit1PgD1UxRYNIMcyQAAAAASUVORK5CYII=" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                            <uix:NGetText.Text>
+                              <OutArgument x:TypeArguments="x:String">[sf_up]</OutArgument>
+                            </uix:NGetText.Text>
+                          </uix:NGetText>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_28" Text="[sf_up]" />
+                          <uix:NGetText DisplayName="Get Text 'QTY (hours)'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_27" Timeout="2">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="415, 543, 5, 10" ElementType="Text" FriendlyName="'7'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='22' role='row' /&gt;&lt;ctrl role='text' idx='1' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='text' automationid='' /&gt;" InformativeScreenshot="c37a0a5884956d582cb1f4998ba9d49f.png" ScopeSelectorArgument="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)' /&gt;" SearchSteps="Selector">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="390, 512, 55, 9" ElementType="Text" FriendlyName="'QTY (hours)'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='20' role='row' /&gt;&lt;ctrl name='QTY (hours)  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='QTY (hours)  ' role='text' automationid='' check:text='QTY (hours)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADsAAAANCAYAAAAXBhYDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIzSURBVEhL5VWxauQwENVXqHS51VbXuHFxzRVbHKhxEdKlMC5SHmdwHQz5AHFtcJVmcRXC4iYEY46FsDgswcYf806SZa+0qyQkZK/Z4oE8Hnnmzcwbk77vcSo4XbJdfYuUzUAIEZiBpbeoux5tkcBTNhM/8et3CEoWyMqtuL9FmS1A6Dl49TJ9s+87NEUKP8hQVhyM+EiKxnh/BGxyRPS7iPNk2XdkmyUS34MfcZRNJ4jfIJbPyRKN9hlIn4HXrXGHgoYcj48cIaWW/4A18mgOLynQ1v+JrI5Joxwbwz6RHYiMXZI23SkvQdGaPgbZsWuCAGM+iJ+iEIUav6mgqjxHlK/RK7K76aDsGivp36zAo2CwU4Z0WaPrW9T8TMc3ztsCiTd+Y4Gr/I9oCtXPYhqzO1HsDps8BqUx8s0unz2yJhEdwLAd+gh0D+ChHP0ZQv4gktR2jeGO7qYiSxFkK7RlhkDZ10NRVaG2qPi5TvLlTbJymqpuzDFAnFdWbCuutjk6+yyqcokgvkZ2MReV3lXHSdZRFBPWHXOMp/M9OPNAGEc9+Uv705tklSxkDHMqjD1jxdK5HGo2vkFVSb0Oo2HO/efJ7hM0z+90Vp3/Kg06yU5oUCRCSqo4Y1xTliZZAXsbS9gL5zNkDzXrIO7UrMxnLLpogu8iK3ZGyRFNmg0Q8dX7mnVBBQsurQsfh9yM35RO9/V8PAxdfnUbHw/Gf1ZqyenzxVCS/CGm5rX/7AnghMj2+AfpY1iFso/kTwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                            <uix:NGetText.Text>
+                              <OutArgument x:TypeArguments="x:String">[asf_qty]</OutArgument>
+                            </uix:NGetText.Text>
+                          </uix:NGetText>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_29" Text="[asf_qty]" />
+                          <uix:NGetText DisplayName="Get Text 'UNIT PRICE ($)'" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NGetText_28" Timeout="2">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="578, 666, 88, 12" ElementType="Text" FriendlyName="'75,00'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' idx='22' /&gt;&lt;ctrl role='text' idx='2' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl role='text' automationid='' /&gt;" InformativeScreenshot="51848ede60da13c16a7338ca5244b0db.png" ScopeSelectorArgument="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)' /&gt;" SearchSteps="Selector">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="579, 625, 87, 12" ElementType="Text" FriendlyName="'UNIT PRICE ($)'" FullSelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='20' role='row' /&gt;&lt;ctrl name='UNIT PRICE ($)  ' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Document Pane' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl role='row' /&gt;&lt;ctrl name='UNIT PRICE ($)  ' role='text' automationid='' check:text='UNIT PRICE ($)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFsAAAAQCAYAAAB5qQM2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK7SURBVFhH7Zc9a9tAGMf1KTR29OQpixYNWTJkCGjxlC2D0JAlUBCYQpcgCB2L1mJEhi5GdKvRkkGYEgjCJYQKf5h/nzvdSbrzKapdvywa/hjunntefnd67myt12sMOo4G2P+pMovguhGy0jzfVgO7XCBybVh2gKQohcEzEn/cjEkb6xJR9qraiDEe3LLhRj/wM7qkccugMfzkWayvVK3T7GwP0/kSZdc8xXH8L0iXb+TjFRmP186tQJZE8B2WM7N34UcJshWrT9rrPkld8FZzhM6ZyJ18xwEcscb2PmPO82A8zuCEc6y09TvCJueTGDlPqAv2gkNSfL9zAjbWlTmSwK1jS9i2n6CQa/IYE1uO6bDfkMfXsO0JokVR2S9nCAi8ar+58WYJf6KGKp8xbsJbuM4VvNpviSIJKO414pzBb3zsDLtJ8kCwZdIijgm26leDXSTwbS0PRVvCFrH0jeKw9bo6Yu8GW+yk5UyRrn6dDHZ1sqmV8E+2Dfu3slaPVWk72Hp+Mh9+8DgHyYzUUe9usN17pPMp9SsW/BGzQ8DuaCPVVyVEPT38+qj14G1haz713LnUja/G1J7N7oMgycU6jZvwsyNsgvbnCfFkRHMX8K7ody+w20WTHB8PqXpB8pMtN0Ip8JAn2wS7Es9Lfuk1uz7YRoN3YBM0FdCeT7Zxvmkj8nK06ouoDXvfPbsHtvsJ8X0rdj9s6bA5LdXt/aF5xmxAe0Eanp8Edv06qMc02MbXyHdMvZF4SW0DW89Pxj7Hx+iOYN8ivCG4sj5Rb/t+YWrBZqI+NJvCYyeGAxzBC7+JnkjzJmj8BJ0CNqkUrYyKDqndqLCZjV7PP76zFR8ylgawXCJ98A3vbJrrfY0M6pH6zpbj/BCYxrQWwjTA3kb8H+QFfUUv5nku1q/7/kEOOrgG2EfUAPtoWuMvX5h7iguCpqcAAAAASUVORK5CYII=" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NGetText.Target>
+                            <uix:NGetText.Text>
+                              <OutArgument x:TypeArguments="x:String">[asf_up]</OutArgument>
+                            </uix:NGetText.Text>
+                          </uix:NGetText>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_30" Text="[asf_up]" />
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NApplicationCard.Body>
+                    <uix:NApplicationCard.TargetApp>
+                      <uix:TargetApp Area="21, 1, 1128, 1022" FilePath="C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\acrord32.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJPSURBVFhH1ZY9aBRBFMevUVCUKIliOPHjEPzIkTRiOAWxSBobLawU7MQ2aBdFBBHkIHiFVjYhcGijyNkIKS5dIHCQSs6rQgq90mZvd7Z5vv9bNu7ODHGyN5xY/Jh9b96895+Zt8uWiOifYjjisdIRZo2hIdhiFvTcNgwHL1yLz45vD1a/UhAEe+fnD4oWH/2KJ/YFkos3pNfIYjh4AYUfP9iT74HBxjrFE/sHnG9zNxGGAwJsCYvgIsJw+BQA/iYiZwBXAdHrV0nDTR6k4HvXGpOSiJCeeK7XyxnAVYCaqVD4fkVERIuPrTFZwjdL2xy7pdfLGcBVQDx1SkZ15RKp+3eMeQN+O5Bbr5czgPMJzNcobNQlKU7CFqPjVUD47i3FJw6QOnfcOm/DqwA0HmJdmjDFqwA0nrp7m9TVaVK35qwxOl4FqDPjcvdhe5Xi8iFS5yelMePyYSmk5rhHvnzKrfEiIHr5TJLL/d+8TqpyLCl48eSfq+BRTma6kls7lAB8eNTpo0nR2SlS12bkGvAm4BSihYeJKBRm0BvqxuVcjsIC5K65MHYWvXiadL6t8TCP3nhwTwTr84UFwBc94cT8wcEzXkE9xoXCAnAC8GPntp25UliAL/5/AdVqVajX6zt2rVajVqtlzNnwIqDf78uY2r1eT0Skvt3wIgAFswLSMQWnkV2TxYsA7LbZbO7YnU5ntCeg2yjebrdHI2BYnAXgJ9KWYBjkx9RRwGd1odwddL9ZExUBuZCTcy/r9XJGCgc2oNYzDVstwzFqrM7RQaXfNljUiwb3UnIAAAAASUVORK5CYII=" InformativeScreenshot="ce852df32182d9c1bc96d9a1229eda1c.png" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC (32-bit)'/&gt;" />
+                    </uix:NApplicationCard.TargetApp>
+                  </uix:NApplicationCard>
+                </Sequence>
+              </If.Else>
+            </If>
+            <Sequence sap:VirtualizedContainerService.HintSize="1075,784" sap2010:WorkflowViewState.IdRef="Sequence_39">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[sf_amount]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[(Convert.ToDouble(sf_up)*Convert.ToInt32(sf_qty)).ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[asf_amount]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[(Convert.ToDouble(asf_up)*Convert.ToInt32(asf_qty)).ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[total1]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[(Convert.ToDouble(sf_up)*Convert.ToInt32(sf_qty)+Convert.ToDouble(asf_up)*Convert.ToInt32(asf_qty)).ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_31" Text="[&quot;SF Amount = &quot;+sf_amount+&quot;  AS Amount = &quot;+asf_amount+&quot;  Total = &quot;+total1]" />
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,229" sap2010:WorkflowViewState.IdRef="CommentOut_24">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_14" Text="[&quot;Service Fee Qty = &quot;+sf_qty+&quot;,SF Unit Price = &quot;+sf_up+&quot;,SF Amount = &quot;+sf_amount+&quot;,Additional Service Qty = &quot;+asf_qty+&quot;,AS Unit Price = &quot;+asf_up+&quot;,AS Amount = &quot;+asf_amount+&quot;,Total = &quot;+total1]" />
+                  </Sequence>
+                </ui:CommentOut.Body>
+              </ui:CommentOut>
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{filename1,invoice1.Trim,custID1.Trim,date1.Trim,terms1.Trim,sf_qty.Trim,sf_up.Trim,sf_amount,asf_qty.Trim,asf_up.Trim,asf_amount,total1,name1.Trim,coyname1.Trim,address1.Trim,citi1.Trim,phone1.Trim,email1.Trim}]" DataTable="[DT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="AddDataRow_8" />
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+    <If Condition="[in_IsClassicMode]" sap:VirtualizedContainerService.HintSize="1153,218" sap2010:WorkflowViewState.IdRef="If_4">
+      <If.Then>
+        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[OutputFile]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">["Output-ScreenScrapping-classic.xlsx"]</InArgument>
+          </Assign.Value>
+        </Assign>
+      </If.Then>
+      <If.Else>
+        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[OutputFile]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">["Output-ScreenScrapping-modern.xlsx"]</InArgument>
+          </Assign.Value>
+        </Assign>
+      </If.Else>
+    </If>
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1153,415" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[OutputFile]">
+      <ui:ExcelApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,306" sap2010:WorkflowViewState.IdRef="Sequence_31">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ExcelWriteRange AddHeaders="True" DataTable="[DT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="A1" />
+            <ui:InvokeVBA OutputValue="{x:Null}" CodeFilePath="DocumentProcessing\vba.txt" DisplayName="Invoke VBA  - auto fix all column width" EntryMethodName="ColumnWidth" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeVBA_1" />
+          </Sequence>
+        </ActivityAction>
+      </ui:ExcelApplicationScope.Body>
+    </ui:ExcelApplicationScope>
+    <Sequence sap:VirtualizedContainerService.HintSize="1153,179" sap2010:WorkflowViewState.IdRef="Sequence_32">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[OutputFile]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="StartProcess_4" />
+    </Sequence>
+  </Sequence>
+</Activity>
